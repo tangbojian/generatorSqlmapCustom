@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper.BatchStepExecutionSeqMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model2.BatchStepExecutionSeq">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="UNIQUE_KEY" jdbcType="CHAR" property="uniqueKey" />
+  </resultMap>
+  <insert id="insert" parameterType="com.taotao.mybatis.model2.BatchStepExecutionSeq">
+    insert into batch_step_execution_seq (ID, UNIQUE_KEY)
+    values (#{id,jdbcType=BIGINT}, #{uniqueKey,jdbcType=CHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, UNIQUE_KEY
+    from batch_step_execution_seq
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="UNIQUE_KEY" jdbcType="CHAR" property="uniqueKey" />
+  </resultMap>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    insert into batch_step_execution_seq (ID, UNIQUE_KEY)
+    values (#{id,jdbcType=BIGINT}, #{uniqueKey,jdbcType=CHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, UNIQUE_KEY
+    from batch_step_execution_seq
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="UNIQUE_KEY" jdbcType="CHAR" property="uniqueKey" />
+  </resultMap>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    insert into batch_step_execution_seq (ID, UNIQUE_KEY)
+    values (#{id,jdbcType=BIGINT}, #{uniqueKey,jdbcType=CHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, UNIQUE_KEY
+    from batch_step_execution_seq
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="UNIQUE_KEY" jdbcType="CHAR" property="uniqueKey" />
+  </resultMap>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionSeq">
+    insert into batch_step_execution_seq (ID, UNIQUE_KEY)
+    values (#{id,jdbcType=BIGINT}, #{uniqueKey,jdbcType=CHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ID, UNIQUE_KEY
+    from batch_step_execution_seq
+  </select>
+</mapper>

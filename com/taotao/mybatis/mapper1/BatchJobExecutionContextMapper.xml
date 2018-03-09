@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper1.BatchJobExecutionContextMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution_context
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    insert into batch_job_execution_context (JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    update batch_job_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_job_execution_context
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_job_execution_context
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution_context
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    insert into batch_job_execution_context (JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.BatchJobExecutionContext">
+    update batch_job_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_job_execution_context
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_job_execution_context
+  </select>
+</mapper>

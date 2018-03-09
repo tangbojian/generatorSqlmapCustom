@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper.BatchStepExecutionContextMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model2.BatchStepExecutionContext">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model2.BatchStepExecutionContext">
+    insert into batch_step_execution_context (STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model2.BatchStepExecutionContext">
+    update batch_step_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionContext">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    insert into batch_step_execution_context (STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    update batch_step_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionContext">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    insert into batch_step_execution_context (STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    update batch_step_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchStepExecutionContext">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="SHORT_CONTEXT" jdbcType="VARCHAR" property="shortContext" />
+    <result column="SERIALIZED_CONTEXT" jdbcType="LONGVARCHAR" property="serializedContext" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    insert into batch_step_execution_context (STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{shortContext,jdbcType=VARCHAR}, #{serializedContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchStepExecutionContext">
+    update batch_step_execution_context
+    set SHORT_CONTEXT = #{shortContext,jdbcType=VARCHAR},
+      SERIALIZED_CONTEXT = #{serializedContext,jdbcType=LONGVARCHAR}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, SHORT_CONTEXT, SERIALIZED_CONTEXT
+    from batch_step_execution_context
+  </select>
+</mapper>

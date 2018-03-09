@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper.BatchJobExecutionMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model2.BatchJobExecution">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+    <result column="JOB_CONFIGURATION_LOCATION" jdbcType="VARCHAR" property="jobConfigurationLocation" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model2.BatchJobExecution">
+    insert into batch_job_execution (JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, 
+      CREATE_TIME, START_TIME, END_TIME, 
+      STATUS, EXIT_CODE, EXIT_MESSAGE, 
+      LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobInstanceId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, 
+      #{lastUpdated,jdbcType=TIMESTAMP}, #{jobConfigurationLocation,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model2.BatchJobExecution">
+    update batch_job_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP},
+      JOB_CONFIGURATION_LOCATION = #{jobConfigurationLocation,jdbcType=VARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobExecution">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+    <result column="JOB_CONFIGURATION_LOCATION" jdbcType="VARCHAR" property="jobConfigurationLocation" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    insert into batch_job_execution (JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, 
+      CREATE_TIME, START_TIME, END_TIME, 
+      STATUS, EXIT_CODE, EXIT_MESSAGE, 
+      LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobInstanceId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, 
+      #{lastUpdated,jdbcType=TIMESTAMP}, #{jobConfigurationLocation,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    update batch_job_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP},
+      JOB_CONFIGURATION_LOCATION = #{jobConfigurationLocation,jdbcType=VARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobExecution">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+    <result column="JOB_CONFIGURATION_LOCATION" jdbcType="VARCHAR" property="jobConfigurationLocation" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    insert into batch_job_execution (JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, 
+      CREATE_TIME, START_TIME, END_TIME, 
+      STATUS, EXIT_CODE, EXIT_MESSAGE, 
+      LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobInstanceId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, 
+      #{lastUpdated,jdbcType=TIMESTAMP}, #{jobConfigurationLocation,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    update batch_job_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP},
+      JOB_CONFIGURATION_LOCATION = #{jobConfigurationLocation,jdbcType=VARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobExecution">
+    <id column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+    <result column="JOB_CONFIGURATION_LOCATION" jdbcType="VARCHAR" property="jobConfigurationLocation" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    insert into batch_job_execution (JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, 
+      CREATE_TIME, START_TIME, END_TIME, 
+      STATUS, EXIT_CODE, EXIT_MESSAGE, 
+      LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+      )
+    values (#{jobExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobInstanceId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, 
+      #{lastUpdated,jdbcType=TIMESTAMP}, #{jobConfigurationLocation,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobExecution">
+    update batch_job_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP},
+      JOB_CONFIGURATION_LOCATION = #{jobConfigurationLocation,jdbcType=VARCHAR}
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+    where JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_EXECUTION_ID, VERSION, JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, 
+    STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED, JOB_CONFIGURATION_LOCATION
+    from batch_job_execution
+  </select>
+</mapper>

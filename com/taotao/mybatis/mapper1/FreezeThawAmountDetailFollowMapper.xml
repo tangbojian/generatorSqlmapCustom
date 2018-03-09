@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mybatis.mapper1.FreezeThawAmountDetailFollowMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.FreezeThawAmountDetailFollow" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="freeze_id" property="freezeId" jdbcType="INTEGER" />
+    <result column="loan_info_id" property="loanInfoId" jdbcType="VARCHAR" />
+    <result column="gmt_created" property="gmtCreated" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from freeze_thaw_amount_detail_follow
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.FreezeThawAmountDetailFollow" >
+    insert into freeze_thaw_amount_detail_follow (id, freeze_id, loan_info_id, 
+      gmt_created, gmt_modified, is_deleted
+      )
+    values (#{id,jdbcType=INTEGER}, #{freezeId,jdbcType=INTEGER}, #{loanInfoId,jdbcType=VARCHAR}, 
+      #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=CHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.FreezeThawAmountDetailFollow" >
+    update freeze_thaw_amount_detail_follow
+    set freeze_id = #{freezeId,jdbcType=INTEGER},
+      loan_info_id = #{loanInfoId,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, freeze_id, loan_info_id, gmt_created, gmt_modified, is_deleted
+    from freeze_thaw_amount_detail_follow
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, freeze_id, loan_info_id, gmt_created, gmt_modified, is_deleted
+    from freeze_thaw_amount_detail_follow
+  </select>
+</mapper>

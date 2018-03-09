@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper1.BatchStepExecutionMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.BatchStepExecution">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="STEP_NAME" jdbcType="VARCHAR" property="stepName" />
+    <result column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="COMMIT_COUNT" jdbcType="BIGINT" property="commitCount" />
+    <result column="READ_COUNT" jdbcType="BIGINT" property="readCount" />
+    <result column="FILTER_COUNT" jdbcType="BIGINT" property="filterCount" />
+    <result column="WRITE_COUNT" jdbcType="BIGINT" property="writeCount" />
+    <result column="READ_SKIP_COUNT" jdbcType="BIGINT" property="readSkipCount" />
+    <result column="WRITE_SKIP_COUNT" jdbcType="BIGINT" property="writeSkipCount" />
+    <result column="PROCESS_SKIP_COUNT" jdbcType="BIGINT" property="processSkipCount" />
+    <result column="ROLLBACK_COUNT" jdbcType="BIGINT" property="rollbackCount" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.BatchStepExecution">
+    insert into batch_step_execution (STEP_EXECUTION_ID, VERSION, STEP_NAME, 
+      JOB_EXECUTION_ID, START_TIME, END_TIME, 
+      STATUS, COMMIT_COUNT, READ_COUNT, 
+      FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, 
+      WRITE_SKIP_COUNT, PROCESS_SKIP_COUNT, ROLLBACK_COUNT, 
+      EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{stepName,jdbcType=VARCHAR}, 
+      #{jobExecutionId,jdbcType=BIGINT}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{commitCount,jdbcType=BIGINT}, #{readCount,jdbcType=BIGINT}, 
+      #{filterCount,jdbcType=BIGINT}, #{writeCount,jdbcType=BIGINT}, #{readSkipCount,jdbcType=BIGINT}, 
+      #{writeSkipCount,jdbcType=BIGINT}, #{processSkipCount,jdbcType=BIGINT}, #{rollbackCount,jdbcType=BIGINT}, 
+      #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, #{lastUpdated,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.BatchStepExecution">
+    update batch_step_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      STEP_NAME = #{stepName,jdbcType=VARCHAR},
+      JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      COMMIT_COUNT = #{commitCount,jdbcType=BIGINT},
+      READ_COUNT = #{readCount,jdbcType=BIGINT},
+      FILTER_COUNT = #{filterCount,jdbcType=BIGINT},
+      WRITE_COUNT = #{writeCount,jdbcType=BIGINT},
+      READ_SKIP_COUNT = #{readSkipCount,jdbcType=BIGINT},
+      WRITE_SKIP_COUNT = #{writeSkipCount,jdbcType=BIGINT},
+      PROCESS_SKIP_COUNT = #{processSkipCount,jdbcType=BIGINT},
+      ROLLBACK_COUNT = #{rollbackCount,jdbcType=BIGINT},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, VERSION, STEP_NAME, JOB_EXECUTION_ID, START_TIME, END_TIME, 
+    STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, 
+    PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+    from batch_step_execution
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, VERSION, STEP_NAME, JOB_EXECUTION_ID, START_TIME, END_TIME, 
+    STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, 
+    PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+    from batch_step_execution
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.BatchStepExecution">
+    <id column="STEP_EXECUTION_ID" jdbcType="BIGINT" property="stepExecutionId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="STEP_NAME" jdbcType="VARCHAR" property="stepName" />
+    <result column="JOB_EXECUTION_ID" jdbcType="BIGINT" property="jobExecutionId" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="END_TIME" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="COMMIT_COUNT" jdbcType="BIGINT" property="commitCount" />
+    <result column="READ_COUNT" jdbcType="BIGINT" property="readCount" />
+    <result column="FILTER_COUNT" jdbcType="BIGINT" property="filterCount" />
+    <result column="WRITE_COUNT" jdbcType="BIGINT" property="writeCount" />
+    <result column="READ_SKIP_COUNT" jdbcType="BIGINT" property="readSkipCount" />
+    <result column="WRITE_SKIP_COUNT" jdbcType="BIGINT" property="writeSkipCount" />
+    <result column="PROCESS_SKIP_COUNT" jdbcType="BIGINT" property="processSkipCount" />
+    <result column="ROLLBACK_COUNT" jdbcType="BIGINT" property="rollbackCount" />
+    <result column="EXIT_CODE" jdbcType="VARCHAR" property="exitCode" />
+    <result column="EXIT_MESSAGE" jdbcType="VARCHAR" property="exitMessage" />
+    <result column="LAST_UPDATED" jdbcType="TIMESTAMP" property="lastUpdated" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_step_execution
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.BatchStepExecution">
+    insert into batch_step_execution (STEP_EXECUTION_ID, VERSION, STEP_NAME, 
+      JOB_EXECUTION_ID, START_TIME, END_TIME, 
+      STATUS, COMMIT_COUNT, READ_COUNT, 
+      FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, 
+      WRITE_SKIP_COUNT, PROCESS_SKIP_COUNT, ROLLBACK_COUNT, 
+      EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+      )
+    values (#{stepExecutionId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{stepName,jdbcType=VARCHAR}, 
+      #{jobExecutionId,jdbcType=BIGINT}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=VARCHAR}, #{commitCount,jdbcType=BIGINT}, #{readCount,jdbcType=BIGINT}, 
+      #{filterCount,jdbcType=BIGINT}, #{writeCount,jdbcType=BIGINT}, #{readSkipCount,jdbcType=BIGINT}, 
+      #{writeSkipCount,jdbcType=BIGINT}, #{processSkipCount,jdbcType=BIGINT}, #{rollbackCount,jdbcType=BIGINT}, 
+      #{exitCode,jdbcType=VARCHAR}, #{exitMessage,jdbcType=VARCHAR}, #{lastUpdated,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.BatchStepExecution">
+    update batch_step_execution
+    set VERSION = #{version,jdbcType=BIGINT},
+      STEP_NAME = #{stepName,jdbcType=VARCHAR},
+      JOB_EXECUTION_ID = #{jobExecutionId,jdbcType=BIGINT},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      COMMIT_COUNT = #{commitCount,jdbcType=BIGINT},
+      READ_COUNT = #{readCount,jdbcType=BIGINT},
+      FILTER_COUNT = #{filterCount,jdbcType=BIGINT},
+      WRITE_COUNT = #{writeCount,jdbcType=BIGINT},
+      READ_SKIP_COUNT = #{readSkipCount,jdbcType=BIGINT},
+      WRITE_SKIP_COUNT = #{writeSkipCount,jdbcType=BIGINT},
+      PROCESS_SKIP_COUNT = #{processSkipCount,jdbcType=BIGINT},
+      ROLLBACK_COUNT = #{rollbackCount,jdbcType=BIGINT},
+      EXIT_CODE = #{exitCode,jdbcType=VARCHAR},
+      EXIT_MESSAGE = #{exitMessage,jdbcType=VARCHAR},
+      LAST_UPDATED = #{lastUpdated,jdbcType=TIMESTAMP}
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, VERSION, STEP_NAME, JOB_EXECUTION_ID, START_TIME, END_TIME, 
+    STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, 
+    PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+    from batch_step_execution
+    where STEP_EXECUTION_ID = #{stepExecutionId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select STEP_EXECUTION_ID, VERSION, STEP_NAME, JOB_EXECUTION_ID, START_TIME, END_TIME, 
+    STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, 
+    PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+    from batch_step_execution
+  </select>
+</mapper>

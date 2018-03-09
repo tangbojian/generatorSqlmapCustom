@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mybatis.mapper1.SpecialInterestTempMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.SpecialInterestTemp" >
+    <id column="loan_info_id" property="loanInfoId" jdbcType="VARCHAR" />
+    <result column="dis_company_id" property="disCompanyId" jdbcType="VARCHAR" />
+    <result column="factory_company_id" property="factoryCompanyId" jdbcType="VARCHAR" />
+    <result column="value_date" property="valueDate" jdbcType="DATE" />
+    <result column="principal" property="principal" jdbcType="DECIMAL" />
+    <result column="dis_pay_interest_ratio" property="disPayInterestRatio" jdbcType="INTEGER" />
+    <result column="factory_interest_ratio" property="factoryInterestRatio" jdbcType="INTEGER" />
+    <result column="interest_accumulated" property="interestAccumulated" jdbcType="DECIMAL" />
+    <result column="interest_received_accumulated" property="interestReceivedAccumulated" jdbcType="DECIMAL" />
+    <result column="interest_receivable_accumulated_due" property="interestReceivableAccumulatedDue" jdbcType="DECIMAL" />
+    <result column="dis_interest_accumulated" property="disInterestAccumulated" jdbcType="DECIMAL" />
+    <result column="factory_interest_accumulated" property="factoryInterestAccumulated" jdbcType="DECIMAL" />
+    <result column="dis_interest_received_accumulated" property="disInterestReceivedAccumulated" jdbcType="DECIMAL" />
+    <result column="factory_interest_received_accumulated" property="factoryInterestReceivedAccumulated" jdbcType="DECIMAL" />
+    <result column="dis_interest_receivable_accumulated_due" property="disInterestReceivableAccumulatedDue" jdbcType="DECIMAL" />
+    <result column="factory_interest_receivable_accumulated_due" property="factoryInterestReceivableAccumulatedDue" jdbcType="DECIMAL" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from special_interest_temp
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.SpecialInterestTemp" >
+    insert into special_interest_temp (loan_info_id, dis_company_id, factory_company_id, 
+      value_date, principal, dis_pay_interest_ratio, 
+      factory_interest_ratio, interest_accumulated, 
+      interest_received_accumulated, interest_receivable_accumulated_due, 
+      dis_interest_accumulated, factory_interest_accumulated, 
+      dis_interest_received_accumulated, factory_interest_received_accumulated, 
+      dis_interest_receivable_accumulated_due, factory_interest_receivable_accumulated_due, 
+      status, gmt_create)
+    values (#{loanInfoId,jdbcType=VARCHAR}, #{disCompanyId,jdbcType=VARCHAR}, #{factoryCompanyId,jdbcType=VARCHAR}, 
+      #{valueDate,jdbcType=DATE}, #{principal,jdbcType=DECIMAL}, #{disPayInterestRatio,jdbcType=INTEGER}, 
+      #{factoryInterestRatio,jdbcType=INTEGER}, #{interestAccumulated,jdbcType=DECIMAL}, 
+      #{interestReceivedAccumulated,jdbcType=DECIMAL}, #{interestReceivableAccumulatedDue,jdbcType=DECIMAL}, 
+      #{disInterestAccumulated,jdbcType=DECIMAL}, #{factoryInterestAccumulated,jdbcType=DECIMAL}, 
+      #{disInterestReceivedAccumulated,jdbcType=DECIMAL}, #{factoryInterestReceivedAccumulated,jdbcType=DECIMAL}, 
+      #{disInterestReceivableAccumulatedDue,jdbcType=DECIMAL}, #{factoryInterestReceivableAccumulatedDue,jdbcType=DECIMAL}, 
+      #{status,jdbcType=CHAR}, #{gmtCreate,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.SpecialInterestTemp" >
+    update special_interest_temp
+    set dis_company_id = #{disCompanyId,jdbcType=VARCHAR},
+      factory_company_id = #{factoryCompanyId,jdbcType=VARCHAR},
+      value_date = #{valueDate,jdbcType=DATE},
+      principal = #{principal,jdbcType=DECIMAL},
+      dis_pay_interest_ratio = #{disPayInterestRatio,jdbcType=INTEGER},
+      factory_interest_ratio = #{factoryInterestRatio,jdbcType=INTEGER},
+      interest_accumulated = #{interestAccumulated,jdbcType=DECIMAL},
+      interest_received_accumulated = #{interestReceivedAccumulated,jdbcType=DECIMAL},
+      interest_receivable_accumulated_due = #{interestReceivableAccumulatedDue,jdbcType=DECIMAL},
+      dis_interest_accumulated = #{disInterestAccumulated,jdbcType=DECIMAL},
+      factory_interest_accumulated = #{factoryInterestAccumulated,jdbcType=DECIMAL},
+      dis_interest_received_accumulated = #{disInterestReceivedAccumulated,jdbcType=DECIMAL},
+      factory_interest_received_accumulated = #{factoryInterestReceivedAccumulated,jdbcType=DECIMAL},
+      dis_interest_receivable_accumulated_due = #{disInterestReceivableAccumulatedDue,jdbcType=DECIMAL},
+      factory_interest_receivable_accumulated_due = #{factoryInterestReceivableAccumulatedDue,jdbcType=DECIMAL},
+      status = #{status,jdbcType=CHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP}
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select loan_info_id, dis_company_id, factory_company_id, value_date, principal, dis_pay_interest_ratio, 
+    factory_interest_ratio, interest_accumulated, interest_received_accumulated, interest_receivable_accumulated_due, 
+    dis_interest_accumulated, factory_interest_accumulated, dis_interest_received_accumulated, 
+    factory_interest_received_accumulated, dis_interest_receivable_accumulated_due, factory_interest_receivable_accumulated_due, 
+    status, gmt_create
+    from special_interest_temp
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select loan_info_id, dis_company_id, factory_company_id, value_date, principal, dis_pay_interest_ratio, 
+    factory_interest_ratio, interest_accumulated, interest_received_accumulated, interest_receivable_accumulated_due, 
+    dis_interest_accumulated, factory_interest_accumulated, dis_interest_received_accumulated, 
+    factory_interest_received_accumulated, dis_interest_receivable_accumulated_due, factory_interest_receivable_accumulated_due, 
+    status, gmt_create
+    from special_interest_temp
+  </select>
+</mapper>

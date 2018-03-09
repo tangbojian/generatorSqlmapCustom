@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mybatis.mapper1.SpecialInterestTempHisMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.SpecialInterestTempHis" >
+    <id column="loan_info_id" property="loanInfoId" jdbcType="VARCHAR" />
+    <result column="dis_company_id" property="disCompanyId" jdbcType="VARCHAR" />
+    <result column="factory_company_id" property="factoryCompanyId" jdbcType="VARCHAR" />
+    <result column="dis_out" property="disOut" jdbcType="DECIMAL" />
+    <result column="factory_in" property="factoryIn" jdbcType="DECIMAL" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from special_interest_temp_his
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.SpecialInterestTempHis" >
+    insert into special_interest_temp_his (loan_info_id, dis_company_id, factory_company_id, 
+      dis_out, factory_in, gmt_create
+      )
+    values (#{loanInfoId,jdbcType=VARCHAR}, #{disCompanyId,jdbcType=VARCHAR}, #{factoryCompanyId,jdbcType=VARCHAR}, 
+      #{disOut,jdbcType=DECIMAL}, #{factoryIn,jdbcType=DECIMAL}, #{gmtCreate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.SpecialInterestTempHis" >
+    update special_interest_temp_his
+    set dis_company_id = #{disCompanyId,jdbcType=VARCHAR},
+      factory_company_id = #{factoryCompanyId,jdbcType=VARCHAR},
+      dis_out = #{disOut,jdbcType=DECIMAL},
+      factory_in = #{factoryIn,jdbcType=DECIMAL},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP}
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select loan_info_id, dis_company_id, factory_company_id, dis_out, factory_in, gmt_create
+    from special_interest_temp_his
+    where loan_info_id = #{loanInfoId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select loan_info_id, dis_company_id, factory_company_id, dis_out, factory_in, gmt_create
+    from special_interest_temp_his
+  </select>
+</mapper>

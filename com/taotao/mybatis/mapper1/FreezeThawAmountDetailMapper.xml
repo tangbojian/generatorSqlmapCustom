@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mybatis.mapper1.FreezeThawAmountDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.FreezeThawAmountDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="account_id" property="accountId" jdbcType="VARCHAR" />
+    <result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+    <result column="make_loan_id" property="makeLoanId" jdbcType="VARCHAR" />
+    <result column="loan_info_id" property="loanInfoId" jdbcType="VARCHAR" />
+    <result column="project_code" property="projectCode" jdbcType="VARCHAR" />
+    <result column="supplier_id" property="supplierId" jdbcType="VARCHAR" />
+    <result column="processInstance_id" property="processinstanceId" jdbcType="VARCHAR" />
+    <result column="mode" property="mode" jdbcType="CHAR" />
+    <result column="order_amount" property="orderAmount" jdbcType="DECIMAL" />
+    <result column="make_loans_amount" property="makeLoansAmount" jdbcType="DECIMAL" />
+    <result column="freeze_amount" property="freezeAmount" jdbcType="DECIMAL" />
+    <result column="freeze_time" property="freezeTime" jdbcType="TIMESTAMP" />
+    <result column="thaw_amount" property="thawAmount" jdbcType="DECIMAL" />
+    <result column="thaw_time" property="thawTime" jdbcType="TIMESTAMP" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="gmt_created" property="gmtCreated" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from freeze_thaw_amount_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.FreezeThawAmountDetail" >
+    insert into freeze_thaw_amount_detail (id, account_id, order_code, 
+      make_loan_id, loan_info_id, project_code, 
+      supplier_id, processInstance_id, mode, 
+      order_amount, make_loans_amount, freeze_amount, 
+      freeze_time, thaw_amount, thaw_time, 
+      type, gmt_created, gmt_modified, 
+      is_deleted)
+    values (#{id,jdbcType=INTEGER}, #{accountId,jdbcType=VARCHAR}, #{orderCode,jdbcType=VARCHAR}, 
+      #{makeLoanId,jdbcType=VARCHAR}, #{loanInfoId,jdbcType=VARCHAR}, #{projectCode,jdbcType=VARCHAR}, 
+      #{supplierId,jdbcType=VARCHAR}, #{processinstanceId,jdbcType=VARCHAR}, #{mode,jdbcType=CHAR}, 
+      #{orderAmount,jdbcType=DECIMAL}, #{makeLoansAmount,jdbcType=DECIMAL}, #{freezeAmount,jdbcType=DECIMAL}, 
+      #{freezeTime,jdbcType=TIMESTAMP}, #{thawAmount,jdbcType=DECIMAL}, #{thawTime,jdbcType=TIMESTAMP}, 
+      #{type,jdbcType=CHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{isDeleted,jdbcType=CHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.FreezeThawAmountDetail" >
+    update freeze_thaw_amount_detail
+    set account_id = #{accountId,jdbcType=VARCHAR},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      make_loan_id = #{makeLoanId,jdbcType=VARCHAR},
+      loan_info_id = #{loanInfoId,jdbcType=VARCHAR},
+      project_code = #{projectCode,jdbcType=VARCHAR},
+      supplier_id = #{supplierId,jdbcType=VARCHAR},
+      processInstance_id = #{processinstanceId,jdbcType=VARCHAR},
+      mode = #{mode,jdbcType=CHAR},
+      order_amount = #{orderAmount,jdbcType=DECIMAL},
+      make_loans_amount = #{makeLoansAmount,jdbcType=DECIMAL},
+      freeze_amount = #{freezeAmount,jdbcType=DECIMAL},
+      freeze_time = #{freezeTime,jdbcType=TIMESTAMP},
+      thaw_amount = #{thawAmount,jdbcType=DECIMAL},
+      thaw_time = #{thawTime,jdbcType=TIMESTAMP},
+      type = #{type,jdbcType=CHAR},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, account_id, order_code, make_loan_id, loan_info_id, project_code, supplier_id, 
+    processInstance_id, mode, order_amount, make_loans_amount, freeze_amount, freeze_time, 
+    thaw_amount, thaw_time, type, gmt_created, gmt_modified, is_deleted
+    from freeze_thaw_amount_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, account_id, order_code, make_loan_id, loan_info_id, project_code, supplier_id, 
+    processInstance_id, mode, order_amount, make_loans_amount, freeze_amount, freeze_time, 
+    thaw_amount, thaw_time, type, gmt_created, gmt_modified, is_deleted
+    from freeze_thaw_amount_detail
+  </select>
+</mapper>

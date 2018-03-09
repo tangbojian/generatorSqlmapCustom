@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mybatis.mapper.BatchJobInstanceMapper">
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model2.BatchJobInstance">
+    <id column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_NAME" jdbcType="VARCHAR" property="jobName" />
+    <result column="JOB_KEY" jdbcType="VARCHAR" property="jobKey" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model2.BatchJobInstance">
+    insert into batch_job_instance (JOB_INSTANCE_ID, VERSION, JOB_NAME, 
+      JOB_KEY)
+    values (#{jobInstanceId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobName,jdbcType=VARCHAR}, 
+      #{jobKey,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model2.BatchJobInstance">
+    update batch_job_instance
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      JOB_KEY = #{jobKey,jdbcType=VARCHAR}
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobInstance">
+    <id column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_NAME" jdbcType="VARCHAR" property="jobName" />
+    <result column="JOB_KEY" jdbcType="VARCHAR" property="jobKey" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    insert into batch_job_instance (JOB_INSTANCE_ID, VERSION, JOB_NAME, 
+      JOB_KEY)
+    values (#{jobInstanceId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobName,jdbcType=VARCHAR}, 
+      #{jobKey,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    update batch_job_instance
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      JOB_KEY = #{jobKey,jdbcType=VARCHAR}
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobInstance">
+    <id column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_NAME" jdbcType="VARCHAR" property="jobName" />
+    <result column="JOB_KEY" jdbcType="VARCHAR" property="jobKey" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    insert into batch_job_instance (JOB_INSTANCE_ID, VERSION, JOB_NAME, 
+      JOB_KEY)
+    values (#{jobInstanceId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobName,jdbcType=VARCHAR}, 
+      #{jobKey,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    update batch_job_instance
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      JOB_KEY = #{jobKey,jdbcType=VARCHAR}
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+  </select>
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model.BatchJobInstance">
+    <id column="JOB_INSTANCE_ID" jdbcType="BIGINT" property="jobInstanceId" />
+    <result column="VERSION" jdbcType="BIGINT" property="version" />
+    <result column="JOB_NAME" jdbcType="VARCHAR" property="jobName" />
+    <result column="JOB_KEY" jdbcType="VARCHAR" property="jobKey" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    insert into batch_job_instance (JOB_INSTANCE_ID, VERSION, JOB_NAME, 
+      JOB_KEY)
+    values (#{jobInstanceId,jdbcType=BIGINT}, #{version,jdbcType=BIGINT}, #{jobName,jdbcType=VARCHAR}, 
+      #{jobKey,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model.BatchJobInstance">
+    update batch_job_instance
+    set VERSION = #{version,jdbcType=BIGINT},
+      JOB_NAME = #{jobName,jdbcType=VARCHAR},
+      JOB_KEY = #{jobKey,jdbcType=VARCHAR}
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+    where JOB_INSTANCE_ID = #{jobInstanceId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select JOB_INSTANCE_ID, VERSION, JOB_NAME, JOB_KEY
+    from batch_job_instance
+  </select>
+</mapper>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mybatis.mapper1.AccountBankInfoSnapshotMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.mybatis.model1.AccountBankInfoSnapshot" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bank_id" property="bankId" jdbcType="INTEGER" />
+    <result column="bank_name" property="bankName" jdbcType="VARCHAR" />
+    <result column="bank_branch_id" property="bankBranchId" jdbcType="INTEGER" />
+    <result column="bank_branch_name" property="bankBranchName" jdbcType="VARCHAR" />
+    <result column="bank_card" property="bankCard" jdbcType="VARCHAR" />
+    <result column="bank_type_name" property="bankTypeName" jdbcType="VARCHAR" />
+    <result column="yes_balance" property="yesBalance" jdbcType="DECIMAL" />
+    <result column="from_today_balance" property="fromTodayBalance" jdbcType="DECIMAL" />
+    <result column="today_pay_balance" property="todayPayBalance" jdbcType="DECIMAL" />
+    <result column="today_balance" property="todayBalance" jdbcType="DECIMAL" />
+    <result column="gmt_created" property="gmtCreated" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="is_deleted" property="isDeleted" jdbcType="CHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from account_bank_info_snapshot
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.taotao.mybatis.model1.AccountBankInfoSnapshot" >
+    insert into account_bank_info_snapshot (id, bank_id, bank_name, 
+      bank_branch_id, bank_branch_name, bank_card, 
+      bank_type_name, yes_balance, from_today_balance, 
+      today_pay_balance, today_balance, gmt_created, 
+      gmt_modified, is_deleted)
+    values (#{id,jdbcType=INTEGER}, #{bankId,jdbcType=INTEGER}, #{bankName,jdbcType=VARCHAR}, 
+      #{bankBranchId,jdbcType=INTEGER}, #{bankBranchName,jdbcType=VARCHAR}, #{bankCard,jdbcType=VARCHAR}, 
+      #{bankTypeName,jdbcType=VARCHAR}, #{yesBalance,jdbcType=DECIMAL}, #{fromTodayBalance,jdbcType=DECIMAL}, 
+      #{todayPayBalance,jdbcType=DECIMAL}, #{todayBalance,jdbcType=DECIMAL}, #{gmtCreated,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=CHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.taotao.mybatis.model1.AccountBankInfoSnapshot" >
+    update account_bank_info_snapshot
+    set bank_id = #{bankId,jdbcType=INTEGER},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_branch_id = #{bankBranchId,jdbcType=INTEGER},
+      bank_branch_name = #{bankBranchName,jdbcType=VARCHAR},
+      bank_card = #{bankCard,jdbcType=VARCHAR},
+      bank_type_name = #{bankTypeName,jdbcType=VARCHAR},
+      yes_balance = #{yesBalance,jdbcType=DECIMAL},
+      from_today_balance = #{fromTodayBalance,jdbcType=DECIMAL},
+      today_pay_balance = #{todayPayBalance,jdbcType=DECIMAL},
+      today_balance = #{todayBalance,jdbcType=DECIMAL},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, bank_id, bank_name, bank_branch_id, bank_branch_name, bank_card, bank_type_name, 
+    yes_balance, from_today_balance, today_pay_balance, today_balance, gmt_created, gmt_modified, 
+    is_deleted
+    from account_bank_info_snapshot
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, bank_id, bank_name, bank_branch_id, bank_branch_name, bank_card, bank_type_name, 
+    yes_balance, from_today_balance, today_pay_balance, today_balance, gmt_created, gmt_modified, 
+    is_deleted
+    from account_bank_info_snapshot
+  </select>
+</mapper>
